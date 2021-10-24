@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles index{% endblock %}
+
+    
+
+{% block body %}
+
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% for messageSupp in app.flashes('delete') %}
+    <div class="alert alert-success" role="alert">
+        {{ messageSupp }}
+    </div>
+    {% endfor %}
+
+    <select class="form-select" aria-label="Default select example" onChange="if(this.value) window.location.replace(this.value)">        
+        <option>Choisir une catégorie</option>
+        <option value='http://localhost:8000/articles'>Tous les articles</option>
+        {% for cat in categorie %}
+        <option value='http://localhost:8000/articles/categorie/{{cat.id}}'>{{cat.nom_categ}}</option>  
+        {% endfor %}
+    </select>
+
+        <div class="row row-cols-1 row-cols-md-3">
+        {% for article in articles %}
+
+            <div class="col">
+                <div class="card h-100">
+                    <a href="{{ path('articles_show', { "id": article.id }) }}"><img src="{{asset('uploads/' ~ article.image)}}" class="card-img-top" alt="img"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">{{article.titre}}</h5>
+                        <p class="card-text">{{article.description | u.truncate(100,'...')}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Auteur : {{article.auteur}} | Catégorie : {{article.categorie}}</small>                   
+                    </div>
+                </div>
+            </div>
+
+            {# <a href="{{ path('articles_show', {'id': article.id}) }}">show</a>
+            <a href="{{ path('articles_edit', {'id': article.id}) }}">edit</a> #}
+                
+                    
+        {% else %}
+      
+                <p colspan="6">Pas d'articles à afficher</p>
+      
+        {% endfor %}
+        </div>
+ 
+{% endblock %}

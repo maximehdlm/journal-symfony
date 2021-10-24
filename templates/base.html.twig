@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('/assets/style.css') }}">
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <body>
+
+    {% block nav %}
+        <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" href ='{{path('articles')}}'>Accueil</a>
+        <a class="navbar-brand" href ='{{ path('articles_new')}}'>Edition article</a>
+        <a class="navbar-brand" href ='{{ path('categorie')}}'>Edition catégorie</a>
+        <a class="navbar-brand" href ='{{ path('about')}}'>A propos</a>
+        <a class="navbar-brand" href ='{{ path('contact')}}'>Contact</a>
+        </div>
+        </nav>
+
+
+    {% endblock %}
+
+        {% block body %}{% endblock %}
+    </body>
+</html>

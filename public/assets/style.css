@@ -1,0 +1,97 @@
+body { 
+    background-color: lightgoldenrodyellow;
+}
+
+.row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+}
+
+.row-cols-md-3 > * {
+    flex: 0 0 auto;
+    width: 30%;
+    margin: 1.6%;
+}
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    object-fit: cover;
+    height: 260px;
+}
+
+.carte {
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 900px;
+}
+
+
+
+h2 {
+    text-align: center;
+}
+
+.form-control {
+    opacity: 60%;
+}
+
+.form{
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    text-align: center;
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0.2), 
+        rgba(0, 0, 0, 0.2)
+      ), url('https://i.pinimg.com/originals/67/c0/e0/67c0e0a2c077039b3f57908a8d8b4017.jpg');
+    background-size: 130%;
+    border-radius: 5%;
+    color: white;
+    width: 350px;
+}
+
+.formcateg{
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+    height: 250px;
+    justify-content: center;
+    text-align: center;
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+      ), url('https://fr.web.img6.acsta.net/pictures/18/11/20/00/23/3979014.jpg');
+    background-size: 100%;
+    background-blend-mode: darken;
+    border-radius: 5%;
+    color: white;
+    width: 350px;
+}
+
+.buttoncateg {
+    opacity: 80%;
+}
+
+
+
+.form button {
+    margin-top: 10px;
+}
+
+.alert-success {
+    color: white;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.buttonAlign {
+    display: flex;
+    margin-top: -10px;
+}
+

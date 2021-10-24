@@ -1,0 +1,22 @@
+
+
+{% block body %}
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <h1>coucou</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form.mail, {'label': 'Adresse émail', 'attr': {'placeholder': 'jeanjean@mail.fr'}}) }}
+    {{ form_row(form.username, {'label': 'Choisir pseudonyme', 'attr': {'placeholder': 'roccomax'}}) }}
+    {{ form_row(form.password, {'label': 'Choisir un mot de passe(minimum 4 caractères)'}) }}
+    {{ form_row(form.confirm_password, {'label': 'Confirmer mot de passe'}) }}
+    {{ form_row(form.statut, {'label': 'Statut'}) }}
+    <button type="submit">s'inscrire</button>
+    {{ form_end(form) }}
+
+{% endblock %}
